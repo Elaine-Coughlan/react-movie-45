@@ -4,12 +4,12 @@ import { getMovies } from "../api/tmdb-api";
 
 const HomePage = (props) => {
   const [movies, setMovies] = useState([]);
-  const favorites = movies.filter(m => m.favorite)
-  localStorage.setItem('favorites', JSON.stringify(favorites))
+  const favourites = movies.filter(m => m.favourite)
+  localStorage.setItem('favourites', JSON.stringify(favourites))
 
-  const addToFavorites = (movieId) => {
+  const addToFavourites = (movieId) => {
     const updatedMovies = movies.map((m) =>
-      m.id === movieId ? { ...m, favorite: true } : m
+      m.id === movieId ? { ...m, favourite: true } : m
     );
     setMovies(updatedMovies);
   };
@@ -24,7 +24,7 @@ const HomePage = (props) => {
     <PageTemplate
       title='Discover Movies'
       movies={movies}
-      selectFavorite={addToFavorites}
+      selectFavourite={addToFavourites}
     />
   );
 };
