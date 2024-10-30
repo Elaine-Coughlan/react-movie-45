@@ -8,6 +8,7 @@ import CardHeader from "@mui/material/CardHeader";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import FavouriteIcon from "@mui/icons-material/Favorite";
+import PlaylistIcon from "@mui/icons-material/PlaylistAdd"
 import CalendarIcon from "@mui/icons-material/CalendarTodayTwoTone";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import IconButton from "@mui/material/IconButton";
@@ -25,12 +26,11 @@ export default function MovieCard({ movie, action }) {
   } else {
     movie.favorite = false
   }
-
+  
   const handleAddToFavourite = (e) => {
     e.preventDefault();
     addToFavourites(movie);
   };
-
   
 
   return (
@@ -40,6 +40,7 @@ export default function MovieCard({ movie, action }) {
               movie.favourite ? (
                 <Avatar sx={{ backgroundColor: 'red' }}>
                   <FavouriteIcon />
+                  
                 </Avatar>
               ) : null
             }
