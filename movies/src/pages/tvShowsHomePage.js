@@ -1,8 +1,41 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import Grid from "@mui/material/Grid2";
 import ShowsList from "../components/tvshows/listComponent";
 
 const TVShowsHomePage = (props) => {
+
+  const [shows, setShows] = useState([]);
+
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc`
+    )
+      .then((res) => res.json())
+      .then((json) => {
+        // console.log(json);
+        return json.results;
+      })
+      .then((shows) => {
+        setShows(shows);
+      });
+  }, []);
+    
+  return (
+    <Grid container>
+        <Grid size={12}>
+            <h1> HomePage </h1>
+        </Grid>
+        <Grid container>
+          <ShowsList shows={shows}></ShowsList>
+        </Grid>
+      </Grid>
+    );
+  };
+export default TVShowsHomePage;
+
+
+
+/*
   const sample = {
 
     "adult": false,
@@ -28,17 +61,4 @@ const TVShowsHomePage = (props) => {
      
 
 const shows = [sample, sample, sample];
-    
-  return (
-    <Grid container>
-        <Grid size={12}>
-            <h1> HomePage </h1>
-        </Grid>
-        <Grid container>
-          <ShowsList shows={shows}></ShowsList>
-        </Grid>
-      </Grid>
-    );
-  };
-export default TVShowsHomePage;
-
+*/
