@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Grid2";
-import ShowsCard from "../components/tvshows/cardcomponent";
+import ShowsList from "../components/tvshows/listComponent";
 
 const TVShowsHomePage = (props) => {
   const sample = {
@@ -34,8 +34,8 @@ const shows = [sample, sample, sample];
         <Grid size={12}>
             <h1> HomePage </h1>
         </Grid>
-        <Grid size={3}>
-          <ShowsCard show={shows[0]} />
+        <Grid container>
+          <ShowsList shows={shows}></ShowsList>
         </Grid>
       </Grid>
     );
