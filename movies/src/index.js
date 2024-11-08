@@ -13,6 +13,7 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import TrendingPage from "./pages/trendingPage";
 import TVShowHomePage from "./pages/tvShowsHomePage";
+import TVShowPage from "./pages/tvshowDetailsPage"
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={ <Navigate to="/" /> } />
             <Route path="/tvShows" element={<TVShowHomePage />} />
+            <Route path="/tvShows/:id" element={<TVShowPage/>}/>
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>

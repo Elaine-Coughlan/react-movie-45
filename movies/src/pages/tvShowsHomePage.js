@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from "react";
 import Grid from "@mui/material/Grid2";
 import ShowsList from "../components/tvshows/listComponent";
+import Header from "../components/headerMovieList";
 
 const TVShowsHomePage = (props) => {
 
@@ -21,14 +22,16 @@ const TVShowsHomePage = (props) => {
   }, []);
     
   return (
+    
     <Grid container>
         <Grid size={12}>
-            <h1> HomePage </h1>
+            <Header title={"TV Page"} />
         </Grid>
         <Grid container>
           <ShowsList shows={shows}></ShowsList>
         </Grid>
       </Grid>
+     
     );
   };
 export default TVShowsHomePage;
