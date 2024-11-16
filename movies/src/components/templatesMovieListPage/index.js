@@ -3,14 +3,11 @@ import Header from "../headerMovieList";
 import FilterCard from "../filterMoviesCard";
 import MovieList from "../movieList";
 import Grid from "@mui/material/Grid2";
-import { Pagination } from "@mui/material";
-
+import Pagination from "../siteFooter"
 
 function MovieListPageTemplate({ movies, title, action }) {  const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genreId = Number(genreFilter);
-  const [currentPage, setCurrentPage] = useState(1); // Current page 
-  const [totalPages, setTotalPages] = useState(0);   // Total pages 
 
   let displayedMovies = movies
     .filter((m) => {
@@ -23,10 +20,6 @@ function MovieListPageTemplate({ movies, title, action }) {  const [nameFilter, 
   const handleChange = (type, value) => {
     if (type === "name") setNameFilter(value);
     else setGenreFilter(value);
-  };
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page); 
   };
 
   return (
@@ -46,18 +39,14 @@ function MovieListPageTemplate({ movies, title, action }) {  const [nameFilter, 
             genreFilter={genreFilter}
           />
         </Grid>
-        <MovieList action={action} movies={displayedMovies}></MovieList>     
-        
+          <MovieList action={action} movies={displayedMovies}></MovieList>     
          </Grid>
-
-         <Grid>
-          
-          <Pagination
-          currentPage={currentPage}     
-          totalPages={totalPages}       
-          onPageChange={handlePageChange} 
+         <Grid size = {12}>
+         <Pagination
+          //currentPage={currentPage}     
+          //totalPages={totalPages}       
+          //onPageChange={handlePageChange} 
         />
-          
          </Grid>
     </Grid>
   );

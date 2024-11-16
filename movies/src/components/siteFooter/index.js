@@ -1,6 +1,6 @@
 // Pagination.js
 import React from 'react';
-import {  Pagination } from '@mui/material';
+import {  Container, Pagination } from '@mui/material';
 
 const siteFooter = ({ currentPage, totalPages, onPageChange }) => {
   const handlePageChange = (event, page) => {
@@ -8,16 +8,19 @@ const siteFooter = ({ currentPage, totalPages, onPageChange }) => {
   };
 
   return (
-  
-        <Pagination
-            count={totalPages}    
-            page={currentPage}
-            onChange={handlePageChange} 
-            color="primary"
-            variant="outlined"
-            shape="rounded"
-            showFirstButton="true"
-        />
+    <footer>
+      <Container fluid>
+          <Pagination
+              count={totalPages}    
+              page={currentPage}
+              onChange={handlePageChange} 
+              color="primary"
+              variant="outlined"
+              shape="rounded"
+              showFirstButton="true"
+          />
+        </Container>
+    </footer>
   )
 };
 
