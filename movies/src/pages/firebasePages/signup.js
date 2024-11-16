@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import Login from "./login";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -25,32 +26,7 @@ const Signup = () => {
     }
   };
 
-  const styles = {
-    root: {
-      marginTop: 2,
-      display: "centre",
-      flexDirection: "column",
-      alignItems: "left",
-    },
-    form: {
-      width: "100%",
-      "& > * ": {
-        marginTop: 2,
-      },
-    },
-    h2: {
-      width: "40ch",
-    },
-    button: {
-      marginRight: 2,
-    },
-    input: {
-      width: "50%",
-      "& > * ": {
-        width: "100%",
-      },
-    },
-  };
+  
 
   return (
     <Grid
@@ -66,7 +42,7 @@ const Signup = () => {
           sx={{ display: "flex", flexDirection: "column", gap: 3 }}
         >
           <Typography variant="h4" align="center" gutterBottom>
-            Login
+            Sign up
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
             <Typography variant="subtitle1">Email:</Typography>
@@ -99,13 +75,13 @@ const Signup = () => {
             Login
           </Button>
           <Typography align="center">
-            Don’t have an account?{" "}
+            Already have an account?{" "}
             <Button
               color="secondary"
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate("/login")}
               sx={{ textTransform: "none" }}
             >
-              Sign Up
+             Login
             </Button>
           </Typography>
         </Box>
