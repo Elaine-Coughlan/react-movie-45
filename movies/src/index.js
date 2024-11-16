@@ -14,6 +14,8 @@ import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import TrendingPage from "./pages/trendingPage";
 import TVShowHomePage from "./pages/tvShowsHomePage";
 import TVShowPage from "./pages/tvshowDetailsPage"
+import SignupPage from "./pages/firebasePages/signup"
+import LoginPage from "./pages/firebasePages/login"
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,6 +44,8 @@ const App = () => {
             <Route path="*" element={ <Navigate to="/" /> } />
             <Route path="/tvShows" element={<TVShowHomePage />} />
             <Route path="/tvShows/:id" element={<TVShowPage/>}/>
+            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/signup" element={<SignupPage/>}/>
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
