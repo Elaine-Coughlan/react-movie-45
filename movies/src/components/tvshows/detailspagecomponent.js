@@ -1,7 +1,6 @@
 import React from "react";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
-import MonetizationIcon from "@mui/icons-material/MonetizationOn";
 import StarRate from "@mui/icons-material/StarRate";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";

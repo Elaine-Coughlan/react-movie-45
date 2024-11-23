@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Assignment 1 - ReactJS app.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Name: Elaine Coughlan
 
-## Available Scripts
+## Overview.
 
-In the project directory, you can run:
+This reporistory contains the extended React-movies application, with extra features applied. The purpose of this repo is for SETU Web Application Development 2. Apoligise for any spelling or grammer mistakes that might follow. 
 
-### `npm start`
+### Features.
+ 
++ Trending page with similar layout to main movie home page with a different Icon button to show a visual difference in the pages
++ TV show page with pagination
++ Individual tv show pages with information: plot overview, genres, and orginal name. 
++ Firebase authentication - email/password
++ Login and signup pages with links added to the siteHeader, these do not blend visibly with other links as I wanted them to stand out.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup requirements.
 
-### `npm test`
+Firebase authentication requires API key just like TMDB in a seperate .env file. Other information on the firebase can be changed to fit testing on other devices. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## API endpoints.
 
-### `npm run build`
++ For the trending page - discover/movie
++ For tv shows page - discover/tv and for indivaidual shows: discover/tv/:id
++ For the pagination feature has added to the tv shows fetch the page number to return
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Routing.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The new routes added to the index page are:
++ <Route path="/movies/trending" TrendingPage    
++ <Route path="/tvShows" TVShowHomePage 
++ <Route path="/tvShows/:id" TVShowPage
++ <Route path="/login" LoginPage
++ <Route path="/signup" SignupPage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Independent learning (If relevant).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Pagination
+https://www.contentful.com/blog/react-pagination/
+https://www.freecodecamp.org/news/build-a-custom-pagination-component-in-react/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Layout for login and signup pages
+https://medium.com/@thirdmarch0303/building-a-simple-login-and-signup-with-react-773ad5444fbc
+https://codesandbox.io/p/sandbox/loginsignup-page-zh85l?file=%2Fsrc%2FApp.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Using firebase (Have also used with android before so not unfamillar with it)
+https://medium.com/@thirdmarch0303/building-a-simple-login-and-signup-with-react-773ad5444fbc
+https://firebaseopensource.com/projects/rakannimer/react-firebase/
+https://samuelbankole.medium.com/google-firebase-in-react-1acc64516788
 
-## Learn More
+Some help taken from stackoverflow if errors showed. Some of it didnt work anyway so was not included here.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Youtube 
+video link: https://youtu.be/tuZIPv3Py-M
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes
+Trending page was added using the help of lab 2 and 3.
+Tvshow page with the individual shows was done with the help of lab 2
+The pagination feature is not availbe on the movie home page as I could not find a suitable fix. Only fix was to rework the fetch function to the way tv show page is set from lab 2.
