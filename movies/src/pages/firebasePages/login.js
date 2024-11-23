@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import { Alert } from "@mui/material";
 import Signup from "./signup";
 
 const Login = () => {
@@ -72,6 +73,7 @@ const Login = () => {
           >
             Login
           </Button>
+          {error && <Alert severity="error">{error}</Alert>} {}
           <Typography align="center">
             Don’t have an account?{" "}
             <Button

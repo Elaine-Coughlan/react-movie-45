@@ -8,6 +8,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
+import { Alert } from "@mui/material";
 import Login from "./login";
 
 const Signup = () => {
@@ -44,6 +45,7 @@ const Signup = () => {
           <Typography variant="h4" align="center" gutterBottom>
             Sign up
           </Typography>
+          {error && <Alert severity="error">{error}</Alert>} {}
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
             <Typography variant="subtitle1">Email:</Typography>
             <TextField
@@ -72,7 +74,7 @@ const Signup = () => {
             fullWidth
             sx={{ marginTop: 2 }}
           >
-            Login
+            Signup
           </Button>
           <Typography align="center">
             Already have an account?{" "}
